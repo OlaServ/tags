@@ -1,13 +1,15 @@
 import TableBody from "@mui/material/TableBody";
+import Paper from "@mui/material/Paper";
 import { TableContainerProps } from "@mui/material";
 import { TablePaginationProps } from "@mui/material";
 import { TableElements as el } from "./table.elements";
 import { ArrowDownward, ArrowUpward } from "@mui/icons-material";
+import { useEffect } from "react";
 
 export interface ITableProps<T extends string> extends TableContainerProps {
   rows: { [key in T]: string | number }[];
   onSort: (column: T) => void;
-  sortOrder?: "asc" | "desc";
+  sortOrder?: string;
   sortBy: T;
   paginationProps: Pick<
     TablePaginationProps,
