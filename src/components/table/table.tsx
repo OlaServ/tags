@@ -1,4 +1,5 @@
 import TableBody from "@mui/material/TableBody";
+import Paper from '@mui/material/Paper';
 import { TableContainerProps } from "@mui/material";
 import { TablePaginationProps } from "@mui/material";
 import { TableElements as el } from "./table.elements";
@@ -41,6 +42,7 @@ export const Table = <T extends string>({
   } = paginationProps;
 
   return (
+    
     <el.StyledContainer {...rest}>
       <el.StyledPagination
         rowsPerPageOptions={[5, 10, 25]}
@@ -51,8 +53,9 @@ export const Table = <T extends string>({
         onPageChange={(event, newPage) => onPageChange(event, newPage)}
         onRowsPerPageChange={onRowsPerPageChange}
         slotProps={slotProps}
+      
       />
-      <el.StyledTable>
+      <el.StyledTable stickyHeader>
         <el.StyledHead>
           <el.StyledHeadRow>
             {columns.map((column, index) => (

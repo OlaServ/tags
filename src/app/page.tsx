@@ -28,6 +28,8 @@ export default async function Home({
     return { name: item.name, count: item.count };
   });
 
+
+
   return (
    <ConnectedTable rows={rows}/>
  

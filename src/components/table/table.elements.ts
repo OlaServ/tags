@@ -1,4 +1,5 @@
 import { styled } from "@mui/material";
+
 import Table from "@mui/material/Table";
 import TablePagination from "@mui/material/TablePagination";
 import { TablePaginationProps } from "@mui/material/TablePagination";
@@ -10,25 +11,29 @@ import TableRow from "@mui/material/TableRow";
 const StyledContainer = styled(TableContainer)({
   width: "100%",
   minWidth: "420px",
-  borderRadius: "12px",
+  position: "relative"
 });
 
 const StyledTable = styled(Table)({
   backgroundColor: "#232325",
   fontFamily: "Manrope, sans-serif",
-   
- 
+  minWidth: "420px",
+
 });
 
 const StyledHead = styled(TableHead)({
   backgroundColor: "#232325",
+  position: "sticky"
 });
 
 const StyledHeadRow = styled(TableRow)({
   backgroundColor: "#323235",
+  marginTop: "52px"
+
 });
 
 const StyledCell = styled(TableCell)(({ theme }) => ({
+  backgroundColor: "#232325",
   "&:first-child": {
     textAlign: "left",
   },
@@ -44,7 +49,6 @@ const StyledCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledHeadCell = styled(StyledCell)<TableCellProps>(({ theme }) => ({
-
   color: " #c0ff5b",
   fontWeight: "bold",
   fontFamily: "inherit",
@@ -54,19 +58,21 @@ const StyledHeadCell = styled(StyledCell)<TableCellProps>(({ theme }) => ({
 }));
 
 const StyledBodyCell = styled(StyledCell)({
-
   color: " #ffffff",
+  
 });
 
 const StyledRow = styled(TableRow)(({ theme }) => ({
   background: "#323235",
-  
-  
-  
+
+  "&:last-child": {
+    "& td, & th": {
+      borderRadius: "0px 0px 12px 12px",
+    },
+  },
 
   "&:last-child td, &:last-child th": {
     border: "0",
-    borderRadius: "12px",
   },
   [theme.breakpoints.up("md")]: {},
 }));
@@ -76,6 +82,11 @@ const StyledPagination = styled(TablePagination)<TablePaginationProps>({
   overflow: "unset",
   fontFamily: "inherit",
   width: "100%",
+  minWidth: "420px",
+  position: "sticky",
+  top: "0",
+  zIndex: 100,
+  borderRadius: "12px 12px 0 0"
 });
 
 export const TableElements = {
