@@ -3,11 +3,13 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { Table } from "@/components/table/table";
 import { ITableProps } from "@/components/table/table";
 import { TagItemType } from "@/domain/tags-table.type";
-import { StyledComponentProps, TableContainerProps } from "@mui/material";
+import { TableContainerProps } from "@mui/material";
 
 type TagPickedProperties = Pick<TagItemType, "name" | "count">;
 
-interface IConnectedTableProps extends StyledComponentProps, Pick<ITableProps<keyof TagPickedProperties>, "rows"> {}
+interface IConnectedTableProps
+  extends TableContainerProps,
+    Pick<ITableProps<keyof TagPickedProperties>, "rows"> {}
 
 export const ConnectedTable = ({ rows, ...rest }: IConnectedTableProps) => {
   const pathname = usePathname();
@@ -38,7 +40,6 @@ export const ConnectedTable = ({ rows, ...rest }: IConnectedTableProps) => {
   const handleRequestSort = (sortBy: string) => {
     const params = new URLSearchParams(searchParams);
     const sortOrder = sortBy === "name" ? "name" : "popular";
-    console.log(sortBy)
     params.set("sort", sortOrder);
     if (order === "desc") {
       params.set("order", "asc");

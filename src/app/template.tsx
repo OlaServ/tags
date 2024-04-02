@@ -1,27 +1,10 @@
 "use client";
-import { ThemeProvider } from "@/theme/theme-provider";
-import { Box } from "@mui/material";
+import { RootTemplate } from "@/components/root-template/root-template";
 
-export default function RootTemplate({
+export default function Template({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <ThemeProvider>
-      <Box
-        sx={{
-          display: "flex",
-          padding: "40px",
-          width: "100%",
-          height: "100vh",
-          justifyContent: "center",
-          backgroundColor: "#232325",
-       
-        }}
-      >
-        {children}
-      </Box>
-    </ThemeProvider>
-  );
+  return <RootTemplate>{children}</RootTemplate>;
 }

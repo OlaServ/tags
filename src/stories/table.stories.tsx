@@ -27,7 +27,7 @@ const rowData = [
   { name: "Kotlin", count: 321 },
   { name: "PHP", count: 432 },
   { name: "Python", count: 654 },
-   /*{ name: "Ruby", count: 987 },
+   { name: "Ruby", count: 987 },
   { name: "Rust", count: 876 },
   { name: "Swift", count: 543 },
   { name: "TypeScript", count: 876 },
@@ -46,7 +46,7 @@ const rowData = [
   { name: "Scala", count: 109 },
   { name: "Shell", count: 456 },
   { name: "SQL", count: 543 },
-  { name: "VBA", count: 987 }, */
+  { name: "VBA", count: 987 }, 
 ];
 
 export const TableComponent: Story = {

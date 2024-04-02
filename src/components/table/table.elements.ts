@@ -10,29 +10,25 @@ import TableRow from "@mui/material/TableRow";
 
 const StyledContainer = styled(TableContainer)({
   width: "100%",
-  minWidth: "420px",
-  position: "relative"
+  position: "relative",
 });
 
 const StyledTable = styled(Table)({
   backgroundColor: "#232325",
   fontFamily: "Manrope, sans-serif",
-  minWidth: "420px",
-
 });
 
 const StyledHead = styled(TableHead)({
   backgroundColor: "#232325",
-  position: "sticky"
+  position: "sticky",
 });
 
 const StyledHeadRow = styled(TableRow)({
   backgroundColor: "#323235",
-  marginTop: "52px"
-
+  marginTop: "52px",
 });
 
-const StyledCell = styled(TableCell)(({ theme }) => ({
+const StyledCell = styled(TableCell)({
   backgroundColor: "#232325",
   "&:first-child": {
     textAlign: "left",
@@ -46,23 +42,21 @@ const StyledCell = styled(TableCell)(({ theme }) => ({
     position: "absolute",
     marginLeft: "8px",
   },
-}));
+});
 
-const StyledHeadCell = styled(StyledCell)<TableCellProps>(({ theme }) => ({
-  color: " #c0ff5b",
+const StyledHeadCell = styled(StyledCell)<TableCellProps>({
+  color: "#c0ff5b",
   fontWeight: "bold",
   fontFamily: "inherit",
-  [theme.breakpoints.up("md")]: {},
   textTransform: "capitalize",
   cursor: "pointer",
-}));
+});
 
 const StyledBodyCell = styled(StyledCell)({
   color: " #ffffff",
-  
 });
 
-const StyledRow = styled(TableRow)(({ theme }) => ({
+const StyledRow = styled(TableRow)({
   background: "#323235",
 
   "&:last-child": {
@@ -74,20 +68,29 @@ const StyledRow = styled(TableRow)(({ theme }) => ({
   "&:last-child td, &:last-child th": {
     border: "0",
   },
-  [theme.breakpoints.up("md")]: {},
-}));
-
-const StyledPagination = styled(TablePagination)<TablePaginationProps>({
-  background: " #c0ff5b",
-  overflow: "unset",
-  fontFamily: "inherit",
-  width: "100%",
-  minWidth: "420px",
-  position: "sticky",
-  top: "0",
-  zIndex: 100,
-  borderRadius: "12px 12px 0 0"
 });
+
+const StyledPagination = styled(TablePagination)<TablePaginationProps>(
+  ({ theme }) => ({
+    background: " #c0ff5b",
+    overflow: "unset",
+    fontFamily: "inherit",
+    width: "100%",
+    position: "sticky",
+    top: "0",
+    zIndex: 100,
+    borderRadius: "12px 12px 0 0",
+    "&> .MuiTablePagination-toolbar": {
+      flexWrap: "wrap",
+    },
+
+    "& .MuiTablePagination-actions": {
+      [theme.breakpoints.down("sm")]: {
+        marginLeft: "0",
+      },
+    },
+  })
+);
 
 export const TableElements = {
   StyledContainer,
