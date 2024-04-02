@@ -10,14 +10,12 @@ import TableRow from "@mui/material/TableRow";
 
 const StyledContainer = styled(TableContainer)({
   width: "100%",
-  minWidth: "420px",
   position: "relative",
 });
 
 const StyledTable = styled(Table)({
   backgroundColor: "#232325",
   fontFamily: "Manrope, sans-serif",
-  minWidth: "420px",
 });
 
 const StyledHead = styled(TableHead)({
@@ -72,17 +70,27 @@ const StyledRow = styled(TableRow)({
   },
 });
 
-const StyledPagination = styled(TablePagination)<TablePaginationProps>({
-  background: " #c0ff5b",
-  overflow: "unset",
-  fontFamily: "inherit",
-  width: "100%",
-  minWidth: "420px",
-  position: "sticky",
-  top: "0",
-  zIndex: 100,
-  borderRadius: "12px 12px 0 0",
-});
+const StyledPagination = styled(TablePagination)<TablePaginationProps>(
+  ({ theme }) => ({
+    background: " #c0ff5b",
+    overflow: "unset",
+    fontFamily: "inherit",
+    width: "100%",
+    position: "sticky",
+    top: "0",
+    zIndex: 100,
+    borderRadius: "12px 12px 0 0",
+    "&> .MuiTablePagination-toolbar": {
+      flexWrap: "wrap",
+    },
+
+    "& .MuiTablePagination-actions": {
+      [theme.breakpoints.down("sm")]: {
+        marginLeft: "0",
+      },
+    },
+  })
+);
 
 export const TableElements = {
   StyledContainer,
