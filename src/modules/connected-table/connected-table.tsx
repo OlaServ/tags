@@ -19,7 +19,7 @@ export const ConnectedTable = ({ rows, ...rest }: IConnectedTableProps) => {
   const currentPage = Number(searchParams.get("page")) || 1;
   const rowsPerPage = Number(searchParams.get("pagesize")) || 5;
   const order = searchParams.get("order") || "desc";
-  const sortBy = searchParams.get("sortBy") || "name";
+  const sortBy = searchParams.get("sort") || "name";
 
   const createPageURL = (_event: unknown, newPage: number) => {
     const params = new URLSearchParams(searchParams);
@@ -54,7 +54,8 @@ export const ConnectedTable = ({ rows, ...rest }: IConnectedTableProps) => {
     <Table
       rows={rows}
       onSort={handleRequestSort}
-      sortBy={sortBy}
+      sortBy={sortBy === "name" ? "name" : "count"}
+      sortOrder={order}
       paginationProps={{
         rowsPerPage,
         page: Number(currentPage) - 1,

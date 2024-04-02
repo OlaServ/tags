@@ -30,7 +30,7 @@ const StyledHeadRow = styled(TableRow)({
 
 const StyledCell = styled(TableCell)({
   backgroundColor: "#232325",
-  "&:first-child": {
+  "&:first-of-type": {
     textAlign: "left",
   },
   fontFamily: "inherit",
@@ -59,13 +59,13 @@ const StyledBodyCell = styled(StyledCell)({
 const StyledRow = styled(TableRow)({
   background: "#323235",
 
-  "&:last-child": {
+  "&:last-of-type": {
     "& td, & th": {
       borderRadius: "0px 0px 12px 12px",
     },
   },
 
-  "&:last-child td, &:last-child th": {
+  "&:last-of-type td, &:last-of-type th": {
     border: "0",
   },
 });
@@ -82,6 +82,19 @@ const StyledPagination = styled(TablePagination)<TablePaginationProps>(
     borderRadius: "12px 12px 0 0",
     "&> .MuiTablePagination-toolbar": {
       flexWrap: "wrap",
+    },
+
+    "& .MuiTablePagination-selectLabel, & .MuiTablePagination-displayedRows": {
+      [theme.breakpoints.down("sm")]: {
+        margin: "0",
+      },
+    },
+
+    "& .MuiTablePagination-toolbar": {
+      [theme.breakpoints.down("sm")]: {
+        padding: "8px",
+        justifyContent: "center",
+      },
     },
 
     "& .MuiTablePagination-actions": {
