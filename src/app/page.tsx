@@ -28,10 +28,5 @@ export default async function Home({
     return { name: item.name, count: item.count };
   });
 
-
-
-  return (
-   <ConnectedTable rows={rows}/>
- 
-  );
+  return <ConnectedTable rows={rows} sx={{ marginBottom: "auto" }} />;
 }

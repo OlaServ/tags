@@ -5,8 +5,10 @@ const Container = styled(Box)({
   padding: "40px",
   width: "100%",
   height: "100vh",
+  alignItems: "center",
   justifyContent: "center",
   backgroundColor: "#232325",
+  flexDirection: "column"
 });
 
 export const RootTemplateElements = {

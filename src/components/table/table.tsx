@@ -1,5 +1,4 @@
 import TableBody from "@mui/material/TableBody";
-import Paper from "@mui/material/Paper";
 import { TableContainerProps } from "@mui/material";
 import { TablePaginationProps } from "@mui/material";
 import { TableElements as el } from "./table.elements";

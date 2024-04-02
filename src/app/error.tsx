@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import { Button } from "@/components/button/button";
+import { Typography } from "@mui/material";
 
 export default function Error({
   error,
@@ -14,9 +16,13 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
-    </div>
+    <>
+      <Typography variant="h2" color="#FFFFFF">
+        Something went wrong!
+      </Typography>
+      <Button onClick={() => reset()} sx={{ marginTop: "1rem" }}>
+        Try again
+      </Button>
+    </>
   );
 }
